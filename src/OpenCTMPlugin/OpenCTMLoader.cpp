@@ -20,7 +20,7 @@
 * Contact information: contact@sofa-framework.org                             *
 ******************************************************************************/
 #include <sofa/core/ObjectFactory.h>
-#include <SofaOpenCTM/OpenCTMLoader.h>
+#include <OpenCTMPlugin/OpenCTMLoader.h>
 #include <fstream>
 #include <openctm.h>
 
@@ -41,15 +41,15 @@ OpenCTMLoader::OpenCTMLoader()
 }
 
 
-bool OpenCTMLoader::load()
+bool OpenCTMLoader::doLoad()
 {
     // -- Loading file
-    const char* filename = m_filename.getFullPath().c_str();
+    const char* filename = this->d_filename.getFullPath().c_str();
     std::ifstream file(filename);
 
     if (!file.good())
     {
-        serr << "Error: OpenCTMLoader: Cannot read file '" << m_filename << "'." << sendl;
+        serr << "Error: OpenCTMLoader: Cannot read file '" << filename << "'." << sendl;
         return false;
     }
     file.close();
@@ -74,7 +74,7 @@ bool OpenCTMLoader::readOpenCTM(const char *filename)
     const CTMuint  * indices = ctm.GetIntegerArray(CTM_INDICES);
 
     // Filling vertices buffer
-    type::vector<sofa::type::Vector3>& my_positions = *(d_positions.beginEdit());
+    auto& my_positions = *(d_positions.beginEdit());
     my_positions.fastResize(vertCount);
     for (unsigned int i=0; i<vertCount; ++i)
     {

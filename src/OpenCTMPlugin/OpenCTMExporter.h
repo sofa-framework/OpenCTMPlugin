@@ -26,10 +26,14 @@
 #include <sofa/core/objectmodel/DataFileName.h>
 #include <sofa/core/topology/BaseMeshTopology.h>
 #include <sofa/core/behavior/BaseMechanicalState.h>
-#include <SofaBaseVisual/VisualModelImpl.h>
 #include <OpenCTMPlugin/config.h>
 
 #include <fstream>
+
+namespace sofa::component::visualmodel
+{
+    class VisualModelImpl;
+}
 
 namespace sofa::component::misc
 {

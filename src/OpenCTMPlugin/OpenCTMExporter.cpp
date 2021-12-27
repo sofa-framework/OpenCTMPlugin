@@ -20,8 +20,10 @@
 * Contact information: contact@sofa-framework.org                             *
 ******************************************************************************/
 
+#include <OpenCTMPlugin/OpenCTMExporter.h>
+
+#include <SofaBaseVisual/VisualModelImpl.h>
 #include <sofa/core/ObjectFactory.h>
-#include <SofaOpenCTM/OpenCTMExporter.h>
 
 #include <sofa/simulation/AnimateBeginEvent.h>
 #include <sofa/simulation/AnimateEndEvent.h>
@@ -104,13 +106,12 @@ void OpenCTMExporter::writeOpenCTM()
 
         // Getting data access
         //typedef sofa::component::visualmodel::VisualModelImpl::TexCoord TexCoord;
-        typedef sofa::component::visualmodel::VisualModelImpl::Coord Coord;
 
-        const sofa::type::vector<Coord>& vertices = m_pVisual->getVertices();
-        const sofa::type::vector<Coord>& normals = m_pVisual->getVnormals();
+        const auto& vertices = m_pVisual->getVertices();
+        const auto& normals = m_pVisual->getVnormals();
 
-        const sofa::type::vector<sofa::core::topology::Triangle>& triangles = m_pVisual->getTriangles();
-        const sofa::type::vector<sofa::core::topology::Quad>& quads = m_pVisual->getQuads();
+        const auto& triangles = m_pVisual->getTriangles();
+        const auto& quads = m_pVisual->getQuads();
 
 
         // Save the file using the OpenCTM API
