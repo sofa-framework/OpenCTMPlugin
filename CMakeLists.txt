@@ -18,7 +18,7 @@ set(SOURCE_FILES
     ${SOFA_OPENCTM_SRC_DIR}/initOpenCTMPlugin.cpp
 )
 
-set(README_FILES OpenCTMPlugin.txt)
+set(README_FILES README.md)
 
 add_library(${PROJECT_NAME} SHARED ${HEADER_FILES} ${SOURCE_FILES} ${README_FILES})
 
