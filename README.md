@@ -1,22 +1,16 @@
+# OpenCTM plugin
 
-**********************************************
-*            OpenCTM plugin.txt              *
-**********************************************
-
-
-AUTHOR :
+## AUTHOR :
  - epernod (Erik Pernod)
  
-CONTACT:
+## CONTACT:
  - erik.pernod@gmail.com 
 
 
-LICENSE :
+## LICENSE :
  - OpenCTM library is an Open source, with a very liberal license (zlib/libpng license).
 
-
-
-OTHER COMMENTS :
+## OTHER COMMENTS :
 
 OpenCTM — the Open Compressed Triangle Mesh file format — is a file format, 
 a software library and a tool set for compression of 3D triangle meshes. 
